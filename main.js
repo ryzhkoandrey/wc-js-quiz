@@ -30,3 +30,12 @@ const questions = [
 		correct: 2,
 	},
 ];
+
+// Находим элементы
+
+const headerContainer = document.querySelector('#header');
+
+// Переменные игры
+
+let score = 0; // количество правильных ответов
+let questionIndex = 0; // текущий вопрос
