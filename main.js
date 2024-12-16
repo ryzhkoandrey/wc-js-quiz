@@ -34,6 +34,8 @@ const questions = [
 // Находим элементы
 
 const headerContainer = document.querySelector('#header');
+const listContainer = document.querySelector('#list');
+const submitBtn = document.querySelector('#submit');
 
 // Переменные игры
 
