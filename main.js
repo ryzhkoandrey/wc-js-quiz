@@ -45,6 +45,8 @@ let questionIndex = 0; // текущий вопрос
 clearPage();
 showQuestion();
 
+submitBtn.onclick = checkAnswer;
+
 function clearPage() {
 	headerContainer.innerHTML = '';
 	listContainer.innerHTML = '';
@@ -67,7 +69,12 @@ function showQuestion() {
 					<span>%answer%</span>
 				</label>
 			</li>`;
+
 		const answerHTML = questionTemplate.replace('%answer%', answerText);
 		listContainer.innerHTML += answerHTML;
 	}
+}
+
+function checkAnswer() {
+	console.log('checkAnswer started');
 }
