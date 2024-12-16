@@ -76,5 +76,12 @@ function showQuestion() {
 }
 
 function checkAnswer() {
-	console.log('checkAnswer started');
+
+	const checkedRadio = listContainer.querySelector('input[type="radio"]:checked');
+
+	if (checkedRadio) {
+		console.log('Ok');
+	} else {
+		return;
+	}
 }
