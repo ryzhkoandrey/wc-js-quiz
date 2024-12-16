@@ -41,3 +41,24 @@ const submitBtn = document.querySelector('#submit');
 
 let score = 0; // количество правильных ответов
 let questionIndex = 0; // текущий вопрос
+
+clearPage();
+showQuestion();
+
+function clearPage() {
+	headerContainer.innerHTML = '';
+	listContainer.innerHTML = '';
+}
+
+function showQuestion() {
+
+	// Вопрос
+	const headerTemplate = `<h2 class="title">%title%</h2>`;
+	const title = headerTemplate.replace('%title%', questions[questionIndex]['question']);
+	headerContainer.innerHTML = title;
+
+	// Варианты ответов
+	for (item of questions[questionIndex]['answers']) {
+		console.log('* ' + item);
+	}
+}
