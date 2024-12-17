@@ -95,8 +95,6 @@ function checkAnswer() {
 		score++;
 	}
 
-	console.log('score:', score);
-
 	if (questionIndex !== questions.length - 1) {
 		questionIndex++;
 		clearPage();
@@ -129,4 +127,19 @@ function showResults() {
 		title = 'Стоит постараться';
 		message = 'Пока у вас меньше половины правильных ответов';
 	}
+
+	// Результат
+	let result = `${score} из ${questions.length}`;
+
+	// Финальный ответ, подставляем данные в шаблон
+	const finalMessage = resultsTemplate
+		.replace('%title%', title)
+		.replace('%message%', message)
+		.replace('%result%', result);
+	headerContainer.innerHTML = finalMessage;
+
+	// Меняем кнопку на "Играть снова"
+	submitBtn.blur();
+	submitBtn.innerText = 'Начать заново';
+	submitBtn.onclick = () => history.go();
 }
