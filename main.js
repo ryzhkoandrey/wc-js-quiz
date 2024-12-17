@@ -32,13 +32,11 @@ const questions = [
 ];
 
 // Находим элементы
-
 const headerContainer = document.querySelector('#header');
 const listContainer = document.querySelector('#list');
 const submitBtn = document.querySelector('#submit');
 
 // Переменные игры
-
 let score = 0; // количество правильных ответов
 let questionIndex = 0; // текущий вопрос
 
@@ -69,7 +67,9 @@ function showQuestion() {
 					<span>%answer%</span>
 				</label>
 			</li>`;
-		const answerHTML = questionTemplate.replace('%answer%', answerText).replace('%number%', answerNumber);
+		const answerHTML = questionTemplate
+			.replace('%answer%', answerText)
+			.replace('%number%', answerNumber);
 		listContainer.innerHTML += answerHTML;
 		answerNumber++;
 	}
@@ -77,6 +77,7 @@ function showQuestion() {
 
 function checkAnswer() {
 
+	// Находим выбранную радио-кнопку
 	const checkedRadio = listContainer.querySelector('input[type="radio"]:checked');
 
 	// Если ответ не выбран - ничего не делаем, выходим из функции
@@ -84,4 +85,7 @@ function checkAnswer() {
 		submitBtn.blur();
 		return;
 	}
+
+	// Узнаем номер ответа пользователя
+	const userAnswer = parseInt(checkedRadio.value);
 }
