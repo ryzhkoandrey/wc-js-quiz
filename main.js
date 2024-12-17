@@ -88,4 +88,11 @@ function checkAnswer() {
 
 	// Узнаем номер ответа пользователя
 	const userAnswer = parseInt(checkedRadio.value);
+
+	// Если ответил верно - увеличиваем счет
+	if (userAnswer === questions[questionIndex]['correct']) {
+		score++;
+	}
+
+	console.log('score:', score);
 }
