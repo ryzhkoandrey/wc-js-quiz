@@ -95,4 +95,17 @@ function checkAnswer() {
 	}
 
 	console.log('score:', score);
+
+	if (questionIndex !== questions.length - 1) {
+		questionIndex++;
+		clearPage();
+		showQuestion();
+	} else {
+		clearPage();
+		showResults();
+	}
+}
+
+function showResults() {
+	console.log('showResults started');
 }
